@@ -19,7 +19,7 @@ def read_reply(response):
         voice="Cynthia Kosut",
         model="eleven_multilingual_v2"
     )
-    play(audio)
+    play(audio) # plays the audio
 
 if __name__ == "__main__":
     read_reply("Hi there!")
