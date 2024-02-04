@@ -7,3 +7,6 @@ __pycache__/
 .env
 test/
 .DS_Store
+audio/
+storage/
+transcripts/
