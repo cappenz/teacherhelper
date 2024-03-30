@@ -8,7 +8,6 @@ import os
 from time import sleep
 from dotenv import load_dotenv, find_dotenv
 
-
 class DidHelper:
     def __init__(self,api_key:str) -> None:
         try:
@@ -49,12 +48,11 @@ class DidHelper:
         }
 
         response = requests.post(url, json=payload, headers=self.headers)
+        print("Response from D-ID API:")
+        print(response.json())
 
         try:
             id = response.json()['id']
-        except Exception as e:
-            print(response)
-            exit()
         return id
 
     def get_talk(self, talk_id):

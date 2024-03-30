@@ -23,5 +23,3 @@ def read_reply(response):
 
 if __name__ == "__main__":
     read_reply("Hi there!")
-
-
