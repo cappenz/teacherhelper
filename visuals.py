@@ -51,9 +51,13 @@ class DidHelper:
         print("Response from D-ID API:")
         print(response.json())
 
-        try:
+        try:  
             id = response.json()['id']
-        return id
+            return id
+        except: 
+            print("Error in getting D-ID/ElevenLabs API response")
+            return None
+        
 
     def get_talk(self, talk_id):
         url = self.base_url + 'talks/' + talk_id
