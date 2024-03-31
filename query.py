@@ -27,14 +27,14 @@ def create_video_from_query(query,name):
         voice = os.getenv("CYNTHIA_VOICE")
         img_url = os.getenv("CYNTHIA_IMG")
     else:
-        print ("error: unknown teacher name {name}")
-        return
+        print (f"error: unknown teacher name {name}")
+        return False
 
     text = str(response)
     output_file = 'output.mp4'
     did = DidHelper(os.getenv("DID_API_KEY"))
-    did.create_talk_and_download(img_url, text, output_file, voice)
-    
+    success = did.create_talk_and_download(img_url, text, output_file, voice) 
+    return success
 
 # Run in a loop asking for user input
 if __name__ == "__main__":

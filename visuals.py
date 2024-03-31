@@ -79,6 +79,8 @@ class DidHelper:
         print('Calling DID API with text: '+text)
         did = DidHelper(os.getenv("DID_API_KEY"))
         id = did.create_talk(img_url, text, voice)
+        if id == None:
+            return False
 
         #wait till talk = finalized (pole did api until vid = complete then get url)
 
@@ -100,6 +102,8 @@ class DidHelper:
         response = requests.get(response_url)
         with open(output_file, 'wb') as f:
             f.write(response.content)
+        return True
+        
         
 # Test code to run test out D-ID API
 
